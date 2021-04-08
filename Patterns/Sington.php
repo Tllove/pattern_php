@@ -18,7 +18,6 @@ class Single
     //1：必须拥有一个private的构造函数
     //2：必须拥有一个保存类的实例的静态成员变量
     //3：必须拥有一个访问这个实例的公共的静态方法
-    //4：必要拥有一个防止克隆的函数
 
 
     /**
@@ -43,7 +42,7 @@ class Single
     static public $instance;
 
     /**
-     *  用于检测是否有实例对象
+     *  用于检测是否有实例对象 通过懒加载获得实例（在第一次使用的时候创建）
      * @return Single
      */
     static public function checkInstance()
