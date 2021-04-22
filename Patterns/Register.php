@@ -1,12 +1,12 @@
 <?php
 /**
+ * 注册模式
  * Created by PhpStorm.
  * User: admin
  * Date: 2021/4/6
  * Time: 9:35 PM
  */
 
-//注册模式
 class Register
 {
     protected static $objects;
@@ -27,10 +27,8 @@ class Register
     }
 }
 
-/**
- * PHP设计模式之注册模式实例
- *
- */
+
+//PHP设计模式之注册模式实例
 class  Registry
 {
 

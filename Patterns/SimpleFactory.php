@@ -1,5 +1,6 @@
 <?php
 /**
+ * 简单工厂模式（静态工厂方法模式）
  * Created by PhpStorm.
  * User: admin
  * Date: 2021/4/6
@@ -22,7 +23,9 @@ interface people
  */
 class man implements people
 {
-// 具体实现people 的say 方法
+    /**
+     * 具体实现people 的say 方法
+     */
     public function say()
     {
         echo '我是男人<br>';
@@ -34,7 +37,9 @@ class man implements people
  */
 class women implements people
 {
-// 具体实现people 的say 方法
+    /**
+     * 具体实现people 的say 方法
+     */
     public function say()
     {
         echo '我是女人<br>';
@@ -46,13 +51,19 @@ class women implements people
  */
 class SimpleFactory
 {
-// 简单工厂里的静态方法-用于创建男人对象
+    /**
+     * 简单工厂里的静态方法-用于创建男人对象
+     * @return man
+     */
     static function createMan()
     {
         return new man();
     }
 
-// 简单工厂里的静态方法-用于创建女人对象
+    /**
+     * 简单工厂里的静态方法-用于创建女人对象
+     * @return women
+     */
     static function createWomen()
     {
         return new women();

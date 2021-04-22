@@ -1,15 +1,12 @@
 <?php
 /**
+ * 单例模式
  * Created by PhpStorm.
  * User: admin
  * Date: 2021/4/6
  * Time: 8:49 PM
  */
 
-/**
- * 单例模式
- * Class Single
- */
 class Single
 {
 

@@ -1,12 +1,14 @@
 <?php
 /**
+ * 适配器模式
  * Created by PhpStorm.
  * User: admin
  * Date: 2021/4/19
  * Time: 9:37 PM
  */
 
-namespace Test;
+namespace Pattern;
+
 interface IDatabase
 {
     function connect($host, $user, $passwd, $dbname);

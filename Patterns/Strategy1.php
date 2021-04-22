@@ -1,9 +1,5 @@
 <?php
 
-
-namespace Strategy;
-
-
 abstract class Duck
 {
     protected $fly = null;
@@ -69,6 +65,7 @@ interface SwimInterface
 {
     public function swim();
 }
+
 //6. 每种鸭子的能力都不相同，会飞的，不会飞的，飞的不怎样的，会叫的，不会叫的，叫不出来的，等等，每种能力都有各自的实现。
 
 class NoFly implements FlyInterface
@@ -130,6 +127,7 @@ class NoCall implements CallInterface
         echo '我是一个不会叫的鸭子' . PHP_EOL;
     }
 }
+
 //7. 假如现在有一个野鸭，和一个小黄鸭，那么我们就可以根据鸭子的各自属性，来组合鸭子的各自能力，就不需要去重写抽象类的方法了
 class WildDuck extends Duck
 {
@@ -148,6 +146,7 @@ class YellowDuck extends Duck
         $this->call = new NoCall();
     }
 }
+
 //8. 最后测试
 class Client
 {

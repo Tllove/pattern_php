@@ -1,5 +1,6 @@
 <?php
 /**
+ * 策略模式
  * Created by PhpStorm.
  * User: admin
  * Date: 2021/4/6
