@@ -7,15 +7,13 @@
  * Time: 9:33 PM
  */
 
-namespace Pattern;
-
-interface people
+interface People
 {
     public function say();
 
 }
 
-class man implements people
+class Man implements People
 {
 
     public function say()
@@ -25,7 +23,7 @@ class man implements people
 
 }
 
-class woman implements people
+class Woman implements People
 {
 
     public function say()
@@ -35,7 +33,7 @@ class woman implements people
 
 }
 
-class SimpleFactory extends man
+class SimpleFactory extends Man
 {
 
     /**
@@ -46,8 +44,10 @@ class SimpleFactory extends man
     {
         return new man();
     }
+}
 
-
+class SimpleFactory1 extends Woman
+{
     /**
      * 创建女
      * @return woman
@@ -64,5 +64,5 @@ class SimpleFactory extends man
  */
 $man = \SimpleFactory::createMan();
 $man->say();
-$woman = \SimpleFactory::createWomen();
+$woman = \SimpleFactory1::createWoman();
 $woman->say();
