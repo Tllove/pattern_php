@@ -21,7 +21,7 @@ interface IDatabase
 
 namespace Test\Database;
 
-use Test\IDatabase;
+use Pattern\IDatabase;
 
 class MySQL implements IDatabase
 {

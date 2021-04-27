@@ -1,58 +1,45 @@
 <?php
 /**
- * 简单工厂模式（静态工厂方法模式）
+ * 简单工厂模式
  * Created by PhpStorm.
  * User: admin
- * Date: 2021/4/6
- * Time: 9:29 PM
+ * Date: 2021/4/26
+ * Time: 9:33 PM
  */
 
-/**
- * 简单工厂模式（静态工厂方法模式）
- * Interface people 人类
- */
+namespace Pattern;
+
 interface people
 {
-
-    //接口 空的方法 只有方法体
     public function say();
+
 }
 
-/**
- * Class man 继承 people 的男人类
- */
 class man implements people
 {
-    /**
-     * 具体实现people 的say 方法
-     */
+
     public function say()
     {
-        echo '我是男人<br>';
+        echo '男';
     }
+
 }
 
-/**
- * Class women 继承 people 的女人类
- */
-class women implements people
+class woman implements people
 {
-    /**
-     * 具体实现people 的say 方法
-     */
+
     public function say()
     {
-        echo '我是女人<br>';
+        echo '女';
     }
+
 }
 
-/**
- * Class SimpleFactory 工厂类
- */
-class SimpleFactory
+class SimpleFactory extends man
 {
+
     /**
-     * 简单工厂里的静态方法-用于创建男人对象
+     * 创建男
      * @return man
      */
     static function createMan()
@@ -60,18 +47,20 @@ class SimpleFactory
         return new man();
     }
 
+
     /**
-     * 简单工厂里的静态方法-用于创建女人对象
-     * @return women
+     * 创建女
+     * @return woman
      */
-    static function createWomen()
+    static function createWoman()
     {
-        return new women();
+        return new woman();
     }
 }
 
+
 /**
- * 具体调用
+ * 具体实现
  */
 $man = \SimpleFactory::createMan();
 $man->say();
