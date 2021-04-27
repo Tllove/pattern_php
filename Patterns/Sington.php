@@ -7,8 +7,6 @@
  * Time: 9:14 PM
  */
 
-namespace Pattern;
-
 class Single
 {
 
@@ -84,5 +82,5 @@ $b_name = 'php_pattern';
 $a->setName($a_name);
 $b->setName($b_name);
 
-echo $a->geName();
-echo $b->geName();
+echo $a->getName();
+echo $b->getName();
