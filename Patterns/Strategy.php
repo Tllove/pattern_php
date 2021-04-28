@@ -108,4 +108,4 @@ class MessageContent
 
 $al_yun_msg = new AliYunMessage();
 $msg = new MessageContext($al_yun_msg);
-$msg->SendMessage();
+$msg->sendMessage();
