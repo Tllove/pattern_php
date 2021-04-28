@@ -7,7 +7,7 @@
  */
 
 /**
- * 工厂模式
+ * 简单工厂模式
  */
 interface Comput
 {
@@ -15,7 +15,7 @@ interface Comput
 }
 
 
-//操作类
+//运算类
 class Operation
 {
     protected $number_a = 0;
@@ -141,7 +141,9 @@ $obj->setNumber(8, 24);
 echo $obj->getResult();
 
 
-
+/**
+ * 工厂方法模式
+ */
 interface People
 {
     function say();
