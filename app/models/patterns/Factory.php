@@ -6,9 +6,9 @@
  * Time: 11:17 AM
  */
 
-/**
- * 简单工厂模式
- */
+
+###简单工厂模式
+
 interface Comput
 {
     function getResult();
@@ -141,9 +141,9 @@ $obj->setNumber(8, 24);
 echo $obj->getResult();
 
 
-/**
- * 工厂方法模式
- */
+###工厂方法模式
+
+
 interface People
 {
     function say();
@@ -203,3 +203,122 @@ $man = \SimpleFactory::createMan();
 $man->say();
 $woman = \SimpleFactory1::createWoman();
 $woman->say();
+
+
+###抽象工厂模式
+
+//产品族
+
+/**
+ * 抽象父类,用于规范子类实现
+ */
+abstract class Driver
+{
+    abstract function driverOneCar();
+
+    abstract function driverTwoCar();
+}
+
+
+/**
+ * 抽象父类,用于规范子类实现
+ */
+abstract class OneCar
+{
+    abstract function drive();
+}
+
+
+/**
+ * 具体实现类
+ */
+class OneBigCar extends OneCar
+{
+    function drive()
+    {
+        return '开一辆大车';
+    }
+}
+
+/**
+ * 具体实现类
+ */
+class OneSmallCar extends OneCar
+{
+    function drive()
+    {
+        return '开一辆小车';
+    }
+}
+
+
+/**
+ * 抽象父类,用于规范子类实现
+ */
+abstract class TwoCar
+{
+    abstract function drive();
+}
+
+/**
+ * 具体实现类
+ */
+class TwoBigCar extends TwoCar
+{
+    function drive()
+    {
+        return '开二辆大车';
+    }
+}
+
+/**
+ * 具体实现类
+ */
+class TwoSmallCar extends TwoCar
+{
+    function drive()
+    {
+        return '开二辆小车';
+    }
+}
+
+/**
+ * 具体大车实现类
+ */
+class BigDriver extends Driver
+{
+
+    function driverOneCar()
+    {
+        return new OneBigCar();
+    }
+
+    function driverTwoCar()
+    {
+        return new TwoBigCar();
+    }
+}
+
+/**
+ * 具体小车实现类
+ */
+class SmallDriver extends Driver
+{
+
+    function driverOneCar()
+    {
+        return new OneSmallCar();
+    }
+
+    function driverTwoCar()
+    {
+        return new TwoSmallCar();
+    }
+}
+
+/**
+ * 具体实现
+ */
+$small_type = new SmallDriver();
+$car = $small_type->driverOneCar();
+$string = $car->drive();
