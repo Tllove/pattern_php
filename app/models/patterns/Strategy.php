@@ -54,4 +54,5 @@ class Browser
 }
 
 $bro = new Browser ();
-echo $bro->call(new FireFoxAgent ());
+$object = new FireFoxAgent();
+echo $bro->call($object);
